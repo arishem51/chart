@@ -1,15 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>Chart</title>
-</head>
-<body>
+  </head>
+  <body>
     <div>
-        <h1>Chart</h1>
+      <h1>Chart</h1>
+      <canvas id="myChart"></canvas>
     </div>
-</body>
+  </body>
+  <script src='./node_modules/chart.js/dist/chart.js'></script>
+  <script type="module" >
+    const labels = ["January", "February", "March", "April", "May", "June"];
+    const data = {
+      labels: labels,
+      datasets: [
+        {
+          label: "My First dataset",
+          backgroundColor: "rgb(255, 99, 132)",
+          borderColor: "rgb(255, 99, 132)",
+          data: [0, 10, 5, 2, 20, 30, 45],
+        },
+      ],
+    };
+
+    const config = {
+      type: "bar",
+      data: data,
+      options: {},
+    };
+    console.log(Chart)
+    const myChart = new Chart(document.getElementById("myChart"), config);
+  </script>
 </html>
